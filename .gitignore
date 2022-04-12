@@ -1,5 +1,6 @@
 /.metadata/*
 \.metadata\*
+.metadata
 *.log
 .mylyn/.taskListIndex/
 *.log
