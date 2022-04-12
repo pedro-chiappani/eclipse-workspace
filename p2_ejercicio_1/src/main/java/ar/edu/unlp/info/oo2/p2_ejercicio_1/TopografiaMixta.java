@@ -19,6 +19,8 @@ public class TopografiaMixta implements Topografia{
 	public Boolean compararTopografia(Topografia topo) {
 		if (topo.equals(this))
 			return true;
-		if (topo.getClass().equals(List<Topografia>))
+		if (topo.getClass().equals(componentes.getClass())) {
+			
+		}
 	}
 }
