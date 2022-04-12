@@ -22,6 +22,5 @@ public class TopografiaMixta implements Topografia{
 		if (topo.getClass().equals(componentes.getClass())) {
 			
 		}
-		return false;
 	}
 }
