@@ -1,0 +1,10 @@
+package ar.edu.unlp.info.oo2.ejercicio_1;
+
+public class ReTweet extends Tweet {
+
+	private Tweet tweetOriginal;
+	
+	public ReTweet (Tweet original) {
+		this.tweetOriginal = original;
+	}
+}

@@ -1,0 +1,45 @@
+package ar.edu.unlp.info.oo2.biblioteca;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
+import java.util.ArrayList;
+
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
+import org.json.simple.*;
+import org.json.simple.parser.*;
+
+public class BibliotecaAdapterTest {
+	
+	private Biblioteca biblioteca;
+	
+	@BeforeEach
+	public void setUp() {
+		biblioteca = new Biblioteca();
+		JSONsimpleAdapter jsonAd = new JSONsimpleAdapter();
+		biblioteca.setExporter(jsonAd);
+	}
+
+	@Test
+	public void testExportar() {
+		Socio s1 = new Socio("Pedro", "pepe@mail.com", "16195-2");
+		Socio s2 = new Socio("Mariano", "mariano@mail.com", "15487-9");
+		biblioteca.agregarSocio(s1);
+		biblioteca.agregarSocio(s2);
+		String json = biblioteca.exportarSocios();
+		JSONParser parser = new JSONParser();
+		try {
+			JSONArray jsonArr = (JSONArray) parser.parse(json);
+			jsonArr.forEach(obj -> {
+				String name = (String) ((JSONObject) obj).get("nombre");
+			});
+		}
+		catch (ParseException e){
+			e.printStackTrace();
+		}
+		assertEquals(true, json.contains("pepe@mail.com"));
+		assertEquals(true, json.contains("15487-9"));
+	
+	}
+	
+}

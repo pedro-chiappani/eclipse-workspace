@@ -1,0 +1,7 @@
+package ar.edu.unlp.info.oo2.p2_ejercicio_1;
+
+public class Topografia {
+
+	private int propAgua;
+	
+}

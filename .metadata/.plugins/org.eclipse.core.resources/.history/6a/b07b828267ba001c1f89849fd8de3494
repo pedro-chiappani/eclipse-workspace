@@ -1,0 +1,16 @@
+package ar.edu.unlp.info.oo2.biblioteca;
+
+import java.io.IOException;
+import com.fasterxml.jackson.core.JsonParseException;
+import com.fasterxml.jackson.databind.JsonMappingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
+import java.util.List;
+
+public class JacksonAdapter extends VoorheesExporter{
+	
+	ObjectMapper mapper = new ObjectMapper();
+	
+	public String exportar(List<Socio> socios) {
+		
+	}
+}
