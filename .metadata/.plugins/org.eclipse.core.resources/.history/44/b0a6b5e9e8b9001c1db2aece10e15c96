@@ -1,8 +1,0 @@
-package ar.edu.unlp.info.oo2.ejercicio_1;
-
-import java.util.*;
-
-public class Sistema {
-
-	private List<Usuario> usuarios;
-}
