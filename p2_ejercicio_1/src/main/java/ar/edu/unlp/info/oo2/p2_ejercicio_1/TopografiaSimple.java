@@ -4,6 +4,10 @@ public class TopografiaSimple implements Topografia{
 
 	private int propAgua;
 	
+	public TopografiaSimple (int agua) {
+		this.propAgua = agua;
+	}
+	
 	public double calcularProporcionAgua() {
 		return this.propAgua;
 	}
