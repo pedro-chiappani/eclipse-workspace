@@ -8,12 +8,13 @@ import java.util.*;
 
 public class TopografiaTest {
 	
-	private Topografia topoAgua, topoTierra, topoMixta1, topoMixta2;
+	private Topografia topoAgua, topoTierra, topoPantano, topoMixta1, topoMixta2;
 	
 	@BeforeEach
 	public void setUp() {
 		topoAgua = new TopografiaSimple(1);
 		topoTierra = new TopografiaSimple(0);
+		topoPantano = new TopografiaSimple(0.7);
 		List<Topografia> lista = new ArrayList<Topografia>();
 		List<Topografia> lista2 = new ArrayList<Topografia>();
 		lista2.add(new TopografiaSimple(1));lista2.add(new TopografiaSimple(0));lista2.add(new TopografiaSimple(0));lista2.add(new TopografiaSimple(1));
@@ -26,6 +27,8 @@ public class TopografiaTest {
 	public void calcularPropTest() {
 		assertEquals(1, topoAgua.calcularProporcionAgua());
 		assertEquals(0, topoAgua.calcularProporcionTierra());
+		assertEquals(0.7, topoPantano.calcularProporcionAgua());
+		assertEquals(0.3, topoPantano.calcularProporcionTierra());
 		assertEquals(0, topoTierra.calcularProporcionAgua());
 		assertEquals(1, topoTierra.calcularProporcionTierra());
 		assertEquals(0.375, topoMixta1.calcularProporcionAgua());
