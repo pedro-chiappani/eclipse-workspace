@@ -5,4 +5,5 @@ public interface Topografia {
 	public double calcularProporcionAgua();
 	public double calcularProporcionTierra();
 	public Boolean compararTopografia(Topografia top);
+	public int size();
 }

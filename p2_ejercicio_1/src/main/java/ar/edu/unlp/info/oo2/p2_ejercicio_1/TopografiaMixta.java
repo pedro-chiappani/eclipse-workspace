@@ -28,22 +28,9 @@ public class TopografiaMixta implements Topografia{
 	}
 	
 	public Boolean compararTopografia(Topografia topo) {
-		if (topo.equals(this))
-			return true;
-		if (topo instanceof Topografia) {
+		if (this.calcularProporcionAgua() == topo.calcularProporcionAgua()){
 			TopografiaMixta aux = (TopografiaMixta) topo;
-			int n = this.size();
-			if (n == aux.size()) {
-				int i = 0;
-				List<Topografia> v1 = aux.getComponentes();
-				List<Topografia> v2 = this.getComponentes();
-				while (n-- != 0) {
-					if (v1.get(i).calcularProporcionAgua() != v2.get(i).calcularProporcionAgua())
-						return false;
-					i++;
-				}
-				return true;
-			}
+			return this.componentes.equals(aux.getComponentes());
 		}
 		return false;
 	}

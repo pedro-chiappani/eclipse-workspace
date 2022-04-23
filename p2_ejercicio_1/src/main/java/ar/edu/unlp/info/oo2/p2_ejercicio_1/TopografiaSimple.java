@@ -15,6 +15,10 @@ public class TopografiaSimple implements Topografia{
 		return this.propAgua;
 	}
 	
+	public int size() {
+		return this.size();
+	}
+	
 	public double calcularProporcionTierra() {
 		BigDecimal total = new BigDecimal("0");
 		total = total.add(new BigDecimal("1"));
