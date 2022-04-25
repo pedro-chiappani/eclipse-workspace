@@ -27,10 +27,20 @@ public class TopografiaMixta implements Topografia{
 		return (componentes.stream().mapToDouble(comp -> comp.calcularProporcionTierra()).sum())/componentes.size();
 	}
 	
+	public Boolean equals (TopografiaMixta topo) {
+		int n = topo.size();
+		int i = 0;
+		while (n-- != 0) {
+			if (this.componentes.get(i).calcularProporcionAgua() != topo.getComponentes().get(i).calcularProporcionAgua()) 
+				return false;
+		}
+		return true;
+	}
+	
 	public Boolean compararTopografia(Topografia topo) {
 		if (this.calcularProporcionAgua() == topo.calcularProporcionAgua()){
 			TopografiaMixta aux = (TopografiaMixta) topo;
-			return this.componentes.equals(aux.getComponentes());
+			return this.equals(aux);
 		}
 		return false;
 	}
