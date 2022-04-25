@@ -24,7 +24,6 @@ public class TopografiaSimple implements Topografia{
 		total = total.add(new BigDecimal("1"));
 		total = total.subtract(new BigDecimal(propAgua));
 		total = total.setScale(3, RoundingMode.HALF_UP);
-		System.out.println(total);
 		return total.doubleValue();
 	}
 	
