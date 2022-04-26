@@ -19,11 +19,6 @@ public class Planta extends Empleado{
 	}
 	
 	public int calcularAdicional() {
-		int tot = 0;
-		if (super.getEstaCasado())
-			tot += 5000;
-		tot += 2000 * super.getHijos();
-		tot += 2000 * this.anios;
-		return tot;
+		return super.calcularAdicional() + 2000 * this.anios;
 	}
 }

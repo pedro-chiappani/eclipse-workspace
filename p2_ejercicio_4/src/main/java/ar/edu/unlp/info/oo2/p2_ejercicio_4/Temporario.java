@@ -17,12 +17,4 @@ public class Temporario extends Empleado {
 	public int calcularBasico() {
 		return 20000 + this.horas * 300;
 	}
-	
-	public int calcularAdicional() {
-		int tot = 0;
-		if (super.getEstaCasado())
-			tot += 5000;
-		tot += super.getHijos() * 2000;
-		return tot;
-		}
 }

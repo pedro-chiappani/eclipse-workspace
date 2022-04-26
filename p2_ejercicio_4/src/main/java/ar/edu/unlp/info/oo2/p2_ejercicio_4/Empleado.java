@@ -16,15 +16,14 @@ public abstract class Empleado {
 	}
 	
 	public abstract int calcularBasico();
-	public abstract int calcularAdicional();
-	
-	public boolean getEstaCasado() {
-		return this.estaCasado;
+	public int calcularAdicional() {
+		int tot = 0;
+		if (this.estaCasado)
+			tot += 5000;
+		tot += this.hijos * 2000;
+		return tot;
 	}
 	
-	public int getHijos() {
-		return this.hijos;
-	}
 	
 	public double calcularDescuento() {
 		return calcularBasico()*0.13 + calcularAdicional()*0.05;
