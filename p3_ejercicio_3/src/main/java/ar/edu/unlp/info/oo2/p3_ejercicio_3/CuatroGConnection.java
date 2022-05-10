@@ -8,7 +8,7 @@ public class CuatroGConnection{
 	}
 	
 	public String transmit(String data, long crc) {
-		return data + crc;
+		return data + " " + crc;
 	}
 	
 	public String symb() {

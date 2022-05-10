@@ -15,19 +15,18 @@ public class DispositivoTest {
 	
 	@Test
 	public void sendTest() {
-		assertEquals(dispositivo.send("Esto es un test"), "Esto es un test1831");
+		assertEquals(dispositivo.send("Esto es un test"), "Esto es un test 1831");
 	}
 	
 	@Test
 	public void conectarConTest() {
-		CuatroGAdapter cuatroGconn = new CuatroGAdapter();
-		assertEquals(dispositivo.cambiarConexion(cuatroGconn), "Esto es un symb de 4G");
+		assertEquals(dispositivo.cambiarConexion4G(), "Esto es un symb de 4G");
+		assertEquals(dispositivo.cambiarConexionWifi(), "Esto es un pict de Wifi");
 	}
 	
 	@Test
 	public void configurarCRCTest() {
-		CRC32_Calculator crc = new CRC32_Calculator();
-		this.dispositivo.cambiarCalculator(crc);
-		assertEquals(dispositivo.send("Esto es un test"), "Esto es un test2910091251");
+		this.dispositivo.cambiarCalculator32();
+		assertEquals(dispositivo.send("Esto es un test"), "Esto es un test 2910091251");
 	}
 }

@@ -9,7 +9,7 @@ public class WifiConn implements Connection {
 	}
 	
 	public String sendData(String data, long crc) {
-		return data + crc;
+		return data + " " + crc;
 	}
 	
 	public String pict() {

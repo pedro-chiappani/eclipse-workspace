@@ -19,13 +19,22 @@ public class Dispositivo {
 		return this.connection.sendData(data, crc);
 	}
 	
-	public String cambiarConexion(Connection conn) {
-		this.connection = conn;
+	public String cambiarConexionWifi() {
+		this.connection = new WifiConn();
 		ringer.ring();
-		return display.showBanner(conn.pict());
+		return display.showBanner(this.connection.pict());
 	}
 	
-	public void cambiarCalculator(CRC_Strategy calcu) {
-		this.crcCalculator = calcu;
+	public String cambiarConexion4G() {
+		this.connection = new CuatroGAdapter();
+		ringer.ring();
+		return display.showBanner(this.connection.pict());
+	}
+	
+	public void cambiarCalculator16() {
+		this.crcCalculator = new CRC16_Calculator();
+	}
+	public void cambiarCalculator32() {
+		this.crcCalculator = new CRC32_Calculator();
 	}
 }
