@@ -10,14 +10,25 @@ public class Pelicula {
 	private double puntaje;
 	private List<Pelicula> similares;
 	
-	public Pelicula (String titulo, int anio, double puntaje, List<Pelicula> similares) {
+	public Pelicula (String titulo, int anio, double puntaje) {
 		this.titulo = titulo;
 		this.anio = anio;
 		this.puntaje = puntaje;
-		this.similares = similares;
 	}
 	
 	public int getAnio() {
 		return this.anio;
+	}
+	
+	public void setSimilares(List<Pelicula> similares) {
+		this.similares = similares;
+	}
+	
+	public List<Pelicula> getSimilares (){
+		return similares;
+	}
+	
+	public double getPuntaje() {
+		return puntaje;
 	}
 }
