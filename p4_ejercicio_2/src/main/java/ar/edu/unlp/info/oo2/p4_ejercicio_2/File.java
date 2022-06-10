@@ -15,6 +15,7 @@ public class File implements FileOO2{
 		super();
 		this.nombre = nombre;
 		this.extension = extension;
+		this.tamanio = tamanio;
 		this.fecha_creacion = fechaC;
 		this.fecha_modificacion = fechaM;
 		this.permisos = permisos;
