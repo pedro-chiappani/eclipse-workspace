@@ -15,5 +15,5 @@ public class PostApp {
 				.filter(post -> !post.getUsuario().equals(user))
 				.sorted(Comparator.comparing(Post::getFecha).reversed())
 				.limit(cantidad).toList();
-	}	
+	}
 }
