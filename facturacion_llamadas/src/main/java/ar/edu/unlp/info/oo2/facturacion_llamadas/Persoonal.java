@@ -27,7 +27,7 @@ public class Persoonal {
 			guiaTelefonica.eliminar(tel);
 			var = new PersonaFisica(nombre, tel, data);
 		}
-		else if (t.equals("juridica")) {
+		else {
 			String tel = guiaTelefonica.guia.last();
 			guiaTelefonica.guia.remove(tel);
 			var = new PersonaJuridica(nombre,tel,data);
@@ -38,7 +38,7 @@ public class Persoonal {
 	}
 	
 	public boolean eliminarUsuario(Persoona p) {
-		List<Persoona> l = p.sis.personas.stream().filter(persona -> persona != p).collect(Collectors.toList());
+		List<Persoona> l = personas.stream().filter(persona -> persona != p).collect(Collectors.toList());
 		boolean borre = false;
 		if (l.size() < personas.size()) {
 			this.personas = l;
