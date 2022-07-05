@@ -3,7 +3,7 @@ package ar.edu.unlp.info.oo2.facturacion_llamadas;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Persoona {
+public abstract class Persoona {
 	private List<Llamada> llamadas = new ArrayList<Llamada>();
 	private String nombre;
 	private String telefono;	

@@ -20,7 +20,7 @@ public class Persoonal {
 			return false;
 	}
 	
-	public Persoona registrarUsuario(String data, String nombre, String t) {
+	public Persoona registrarUsuario(Persoona persona) {
 		Persoona var;
 		if (t.equals("fisica")) {
 			String tel = guiaTelefonica.obtenerUltimo();
