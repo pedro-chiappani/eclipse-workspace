@@ -12,4 +12,8 @@ public class PersonaJuridica extends Persoona{
 	public String getCuit() {
 		return cuit;
 	}
+	
+	public double getDescuento() {
+		return 0.15;
+	}
 }

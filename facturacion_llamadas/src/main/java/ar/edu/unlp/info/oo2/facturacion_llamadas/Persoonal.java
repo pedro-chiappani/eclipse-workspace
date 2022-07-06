@@ -21,32 +21,20 @@ public class Persoonal {
 	}
 	
 	public Persoona registrarUsuario(Persoona persona) {
-		Persoona var;
-		if (t.equals("fisica")) {
-			String tel = guiaTelefonica.obtenerUltimo();
-			guiaTelefonica.eliminar(tel);
-			var = new PersonaFisica(nombre, tel, data);
-		}
-		else {
-			String tel = guiaTelefonica.guia.last();
-			guiaTelefonica.guia.remove(tel);
-			var = new PersonaJuridica(nombre,tel,data);
-		}
-		personas.add(var);
-		return var;
-		
+		String tel = guiaTelefonica.obtenerUltimo();
+		guiaTelefonica.eliminar(tel);
+		persona.setTelefono(tel);
+		personas.add(persona);
+		return persona;	
 	}
 	
 	public boolean eliminarUsuario(Persoona p) {
-		List<Persoona> l = personas.stream().filter(persona -> persona != p).collect(Collectors.toList());
-		boolean borre = false;
-		if (l.size() < personas.size()) {
-			this.personas = l;
-			this.guiaTelefonica.guia.add(p.getTel());
-			borre = true;
+		if (existeUsuario(p)){
+			this.agregarTelefono(p.getTelefono());
+			personas.remove(p);
+			return true;
 		}
-		return borre;
-		
+		return false;
 	}
 	
 	public Llamada registrarLlamada(Persoona q, Persoona q2, String t, int d) {
@@ -62,32 +50,7 @@ public class Persoonal {
 	}
 	
 	public double calcularMontoTotalLlamadas(Persoona p) {
-		double c = 0;
-		Persoona aux = null;
-		for (Persoona pp : personas) {
-			if (pp.tel == p.getTel()) {
-				aux = pp;
-				break;
-			}
-		} if (aux == null) return c;
-		if (aux != null) {
-			for (Llamada l : aux.lista1) {
-				double auxc = 0;
-				if (l.tipoDeLlamada == "nacional") {
-					auxc += l.dur *3 + (l.dur*3*0.21);
-				} else if (l.tipoDeLlamada == "internacional") {
-					auxc += l.dur *200 + (l.dur*200*0.21);
-				}
-				
-				if (aux.t == "fisica") {
-					auxc -= auxc*descuentoFis;
-				} else if(aux.t == "juridica") {
-					auxc -= auxc*descuentoJur;
-				}
-				c += auxc;
-			}
-		}
-		return c;
+		return p.calcularMontoTotalLlamadas();
 	}
 
 	public int cantidadDeUsuarios() {
