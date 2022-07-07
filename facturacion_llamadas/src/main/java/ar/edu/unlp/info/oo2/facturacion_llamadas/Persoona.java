@@ -35,7 +35,7 @@ public abstract class Persoona {
 		return 0;
 	}
 	
-	public double calcularMontoTotalLlamadas(Persoona p) {
+	public double calcularMontoTotalLlamadas() {	
 		double c = 0;
 		Persoona aux = null;
 		for (Persoona pp : personas) {
