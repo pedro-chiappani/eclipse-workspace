@@ -1,40 +1,31 @@
 package ar.edu.unlp.info.oo2.facturacion_llamadas;
 
 public abstract class Llamada {
-	protected String tipoDeLlamada;
-	private String emisor;
-	private String remitente;
-	public int dur;
+	private Persoona emisor;
+	private Persoona remitente;
+	private int dur;
 	
-	public Llamada() {
-		
-	}
-	public Llamada(String s, String p, String p2, Persoona p3, int dur) {
-		this.tipoDeLlamada = s;
-		this.emisor= p;
-		this.remitente= p2;
+	public Llamada(Persoona emisor, Persoona remitente, int dur) {
+		this.emisor= emisor;
+		this.remitente= remitente;
 		this.dur = dur;
+		emisor.agregarLlamada(this);
 	}
-
-	public String getTipoDeLlamada() {
-		return tipoDeLlamada;
-	}
-
-	public void setTipoDeLlamada(String tipoDeLlamada) {
-		this.tipoDeLlamada = tipoDeLlamada;
-	}
-	public void setEmisor(String q) {
+	
+	public void setEmisor(Persoona q) {
 		emisor = q;
 	}
-	public String getRemitente() {
+	public Persoona getRemitente() {
 		return remitente;
 	}
-	public void setRemitente(String remitente) {
+	public void setRemitente(Persoona remitente) {
 		this.remitente = remitente;
 	}
 	
-	public double getCostoLlamada(){
-		return 
+	public abstract double getCostoLlamada();
+	
+	public int getDur() {
+		return dur;
 	}
 	
 	

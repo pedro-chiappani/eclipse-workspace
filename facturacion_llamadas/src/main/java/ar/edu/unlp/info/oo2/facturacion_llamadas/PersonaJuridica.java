@@ -4,8 +4,8 @@ public class PersonaJuridica extends Persoona{
 	
 	private String cuit;
 	
-	public PersonaJuridica(String nom, String tel, String cuit) {
-		super(nom, tel);
+	public PersonaJuridica(String nom, String cuit) {
+		super(nom);
 		this.cuit = cuit;
 	}
 

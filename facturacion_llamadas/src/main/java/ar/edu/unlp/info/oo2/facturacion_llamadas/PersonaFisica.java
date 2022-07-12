@@ -4,8 +4,8 @@ public class PersonaFisica extends Persoona{
 	
 	private String documento;
 	
-	public PersonaFisica(String nombre, String tel, String documento) {
-		super(nombre, tel);
+	public PersonaFisica(String nombre, String documento) {
+		super(nombre);
 		this.documento = documento;
 	}
 	

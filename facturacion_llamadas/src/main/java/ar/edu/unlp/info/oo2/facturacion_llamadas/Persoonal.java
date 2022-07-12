@@ -8,8 +8,6 @@ public class Persoonal {
 	private List<Persoona> personas = new ArrayList<Persoona>();
 	private List<Llamada> llamadas = new ArrayList<Llamada>();
 	private GuiaTelefonica guiaTelefonica = new GuiaTelefonica();
-	private static double descuentoJur = 0.15;
-	private static double descuentoFis = 0;
 	
 	public boolean agregarTelefono(String str) {
 		if (!guiaTelefonica.contiene(str)) {
@@ -37,15 +35,9 @@ public class Persoonal {
 		return false;
 	}
 	
-	public Llamada registrarLlamada(Persoona q, Persoona q2, String t, int d) {
-		Llamada x = new Llamada();
-		x.tipoDeLlamada = t;
-		x.setEmisor(q.tel);
-		x.setRemitente(q2.getTel());
-		x.dur= d;
-		llamadas.add(x);
-		q.lista1.add(x);
-		return x;
+	public Llamada registrarLlamada(Llamada llamada) {
+		llamadas.add(llamada);
+		return llamada;
 		
 	}
 	
