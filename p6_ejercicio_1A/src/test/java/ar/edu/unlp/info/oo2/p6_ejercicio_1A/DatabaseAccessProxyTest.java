@@ -1,8 +1,12 @@
-package ar.edu.unlp.info.oo2.p6_ejercicio_1;
+package ar.edu.unlp.info.oo2.p6_ejercicio_1A;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+
+import ar.edu.unlp.info.oo2.p6_ejercicio_1A.DatabaseAccess;
+import ar.edu.unlp.info.oo2.p6_ejercicio_1A.DatabaseAccessProxy;
+import ar.edu.unlp.info.oo2.p6_ejercicio_1A.DatabaseRealAccess;
 
 import java.util.Arrays;
 import java.util.Collections;

@@ -1,4 +1,4 @@
-package ar.edu.unlp.info.oo2.p6_ejercicio_1;
+package ar.edu.unlp.info.oo2.p6_ejercicio_1B;
 
 import java.util.Collection;
 import java.util.List;
@@ -29,19 +29,19 @@ public class DatabaseAccessProxy implements DatabaseAccess {
 	
 	public int insertNewRow(List<String> rowData) {
 		if (!checkAccess()) {
-			Logger.getLogger("").log(Level.SEVERE, "Acceso denegado a base de datos");
-			throw new RuntimeException("Acceso denegado");
+			Logger.getLogger("app.main").severe("Acceso denegado a base de datos");
+			return -1;
 		}
-		Logger.getLogger("").log(Level.WARNING, "Acceso valido para insertar filas");;
+		Logger.getLogger("app.main").warning("Acceso valido para insertar filas");;
 		return realDatabase.insertNewRow(rowData);
 	}
 	
 	public Collection<String> getSearchResults(String queryString){
 		if (!checkAccess()) {
-			Logger.getLogger("").log(Level.SEVERE, "Acceso denegado a base de datos");
-			throw new RuntimeException("Acceso denegado");
+			Logger.getLogger("app.main").severe("Acceso denegado a base de datos");
+			return null;
 		}
-		Logger.getLogger("").log(Level.INFO,"Acceso valido para busqueda");
+		Logger.getLogger("app.main").info("Acceso valido para busqueda");
 		return realDatabase.getSearchResults(queryString);
 	}
 }

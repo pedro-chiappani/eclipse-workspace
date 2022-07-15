@@ -1,4 +1,4 @@
-package ar.edu.unlp.info.oo2.p6_ejercicio_1;
+package ar.edu.unlp.info.oo2.p6_ejercicio_1B;
 import java.util.Arrays;
 import java.util.Collection;
 import java.util.Collections;
